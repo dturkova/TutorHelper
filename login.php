@@ -16,7 +16,10 @@ else
     if($result->num_rows > 0){
         while($row = $result->fetch_assoc())
         {
-            echo "Привіт, " .$row['login'];
+            echo "Вітаємо, " .$row['login'];
+             // Перенаправляємо на нову сторінку після успішного входу
+             header('Location: table.html');
+             exit(); // Важливо викликати exit() після header(), щоб забезпечити коректну роботу перенаправлення
         }
     }
     else
